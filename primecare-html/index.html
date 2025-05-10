@@ -1,6 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+      /* Force the container to be visible */
+      #vf-chat-container {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 360px !important;
+        height: 600px !important;
+        z-index: 2147483647 !important; /* Maximum possible z-index */
+        background: red !important; /* Keep for debugging */
+        border: 5px solid yellow !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: none !important; /* Allows clicks through when debugging */
+      }
+
+      /* Disable any template overflow */
+      body,
+      html,
+      .hero_area,
+      .header_section {
+        overflow: visible !important;
+      }
+    </style>
     <!-- Basic -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -56,7 +81,7 @@
               </a>
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
-                <span> Phone Call : +256 772207616/ +256 700677231 </span>
+                <span> Phone Call : +256 700677231 </span>
               </a>
             </div>
           </div>
@@ -205,7 +230,7 @@
                     <h2>
                       Mental <br />
                       Health <br />
-                      Suppourt
+                      Support
                     </h2>
                   </div>
                 </div>
@@ -429,7 +454,7 @@
                 </div>
                 <div class="detail-box">
                   <h6>Charity Atuheire</h6>
-                  <p>Chief Executive Officer (CEO)</p>
+                  <p>Founder</p>
                 </div>
               </div>
             </div>
@@ -543,11 +568,13 @@
               <div class="contact_link_box">
                 <a href="">
                   <i class="fa fa-map-marker" aria-hidden="true"></i>
-                  <span> Address : Bible House 5th Floor Kampala, Uganda </span>
+                  <span>
+                    Location : Bible House 5th Floor Kampala, Uganda
+                  </span>
                 </a>
                 <a href="">
                   <i class="fa fa-phone" aria-hidden="true"></i>
-                  <span> Call: +256 772207616/ +256 700677231 </span>
+                  <span> Call: +256 700677231 </span>
                 </a>
                 <a href="">
                   <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -581,9 +608,7 @@
                 <a class="" href="about.html">
                   <i class="fa fa-angle-right" aria-hidden="true"></i> About</a
                 >
-                <a class="" href="why.html">
-                  <i class="fa fa-angle-right" aria-hidden="true"></i> Why Us
-                </a>
+
                 <a class="" href="team.html">
                   <i class="fa fa-angle-right" aria-hidden="true"></i> Our
                   Team</a
@@ -622,43 +647,7 @@
     <script src="js/bootstrap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="js/custom.js"></script>
-    <script type="module">
-      import { FileUploadExtension } from "/extensions.js";
-
-      (function (d, t) {
-        var v = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-        v.onload = function () {
-          // Load Voiceflow chat
-          window.voiceflow.chat.load({
-            verify: { projectID: "67d2dac11171f4701370999b" },
-            url: "https://general-runtime.voiceflow.com",
-            versionID: "production",
-            voice: { url: "https://runtime-api.voiceflow.com" },
-            assistant: {
-              extensions: [FileUploadExtension], // Include FileUploadExtension
-            },
-            launch: {
-              autoStart: true,
-              listening: true,
-            },
-          });
-
-          // Register the FileUpload extension
-          //window.voiceflow.chat.register(FileUploadExtension);
-
-          // Set up the capture event listener once Voiceflow is loaded
-          if (window.setupVoiceflowCapture) {
-            window.setupVoiceflowCapture();
-            console.log("Voiceflow capture setup initialized");
-          } else {
-            console.error("setupVoiceflowCapture function not found");
-          }
-        };
-        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; // Updated Voiceflow widget URL
-        v.type = "text/javascript";
-        s.parentNode.insertBefore(v, s);
-      })(document, "script");
-    </script>
+    <!-- Add this right before the closing </body> 
+    <!-- Right before closing </body> tag -->
   </body>
 </html>
